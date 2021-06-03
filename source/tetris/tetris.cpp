@@ -90,17 +90,11 @@ namespace tet
         if (testX)
             position.x -= testX;
 
-        vectorInt2 bottomPos = position;
         for (const auto &v : poly.coords)
         {
             vectorInt2 p = position + v;
             if (p.y >= 0 && p.y < FIELD_HEIGHT)
-            {
                 dest[p.x][p.y] = poly.type;
-
-                if (p.y > bottomPos.y)
-                    bottomPos = p;
-            }
         }
 
         return position;
